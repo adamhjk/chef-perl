@@ -1,16 +1,16 @@
 Chef
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+WARNING
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+This is a proof of concept - it shows the path for future integration, but all the steps are not complete. What remains:
 
+  * You cannot write Attribute or Definition files in Perl.
+  * At the moment, all your Perl recipes must live in the same cookbook.
+  * There is very little error handling. (ah, who am I kidding - there is none)
+
+SYNOPSIS
+
+This perl module allows you to write Chef recipes in perl rather than ruby.  You can learn more about Chef at http://wiki.opscode.com/display/chef.
 
 INSTALLATION
 
@@ -20,6 +20,8 @@ To install this module, run the following commands:
 	make
 	make test
 	make install
+	
+You will need this module installed on *every Chef client* that you intend to run perl recipes on.
 
 SUPPORT AND DOCUMENTATION
 
@@ -30,8 +32,8 @@ perldoc command.
 
 You can also look for information at:
 
-    RT, CPAN's request tracker
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Chef
+    Opscodes Ticket Tracking System:
+        http://tickets.opscode.com
 
     AnnoCPAN, Annotated CPAN documentation
         http://annocpan.org/dist/Chef
