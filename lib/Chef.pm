@@ -5,16 +5,13 @@ use Chef::Recipe;
 use Chef::Resource;
 use Data::Dumper;
 use JSON::Any qw(XS JSON DWIW);
-use Chef::Syntax::resource;
 
 require Exporter;
 @ISA    = qw(Exporter);
-@EXPORT = qw(resource2 node);
+@EXPORT = qw(resource node);
 
 use warnings;
 use strict;
-
-
 
 =head1 NAME
 
@@ -28,7 +25,7 @@ Version 0.01
 
 our $VERSION = '0.01';
 our $recipe  = Chef::Recipe->new;
-my $node_data;
+our $node_data;
 
 =head1 SYNOPSIS
 
@@ -53,7 +50,7 @@ if you don't export anything, such as for a purely object-oriented module.
 =cut
 
 sub INIT {
- # load_node();
+  load_node();
 }
 
 sub node {
@@ -95,7 +92,7 @@ sub send_to_chef {
 }
 
 sub END {
-  #send_to_chef;
+  send_to_chef;
 }
 
 =head1 AUTHOR

@@ -7,7 +7,7 @@ use Moose;
 
 has 'name'          => ( is => 'rw', isa => 'Str', required => 1 );
 has 'resource_type' => ( is => 'rw', isa => 'Str', required => 1 );
-#has 'resource_sub'  => ( is => 'rw', isa => 'CodeRef' );
+has 'resource_sub'  => ( is => 'rw', isa => 'CodeRef' );
 has 'options' => ( is => 'rw', isa => 'HashRef', default => sub { {}; } );
 
 sub evaluate {
