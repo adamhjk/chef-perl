@@ -1,17 +1,20 @@
 package Chef;
 
-require Exporter;
-@ISA    = qw(Exporter);
-@EXPORT = qw(resource send_to_chef load_node node);
 
 use Chef::Recipe;
 use Chef::Resource;
 use Data::Dumper;
+use JSON::Any qw(XS JSON DWIW);
+use Chef::Syntax::resource;
+
+require Exporter;
+@ISA    = qw(Exporter);
+@EXPORT = qw(resource2 node);
 
 use warnings;
 use strict;
 
-use JSON::Any qw(XS JSON DWIW);
+
 
 =head1 NAME
 
@@ -50,7 +53,7 @@ if you don't export anything, such as for a purely object-oriented module.
 =cut
 
 sub INIT {
-  load_node();
+ # load_node();
 }
 
 sub node {
@@ -92,7 +95,7 @@ sub send_to_chef {
 }
 
 sub END {
-  send_to_chef;
+  #send_to_chef;
 }
 
 =head1 AUTHOR
