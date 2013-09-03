@@ -9,6 +9,8 @@ build_requires 'Test::More';
 requires 'Moose';
 requires 'JSON::Any';
 
+repository 'https://github.com/adamhjk/chef-perl';
+
 auto_install;
 
 WriteAll;
